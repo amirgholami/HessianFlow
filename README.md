@@ -30,4 +30,4 @@ cite the following if you found the library useful for your work:
 
 
 ## Extensions
-- Please see Noah's [repo](https://github.com/noahgolmant/pytorch-hessian-eigenthings) on how to compute the other eigenvalues of the Hessian
+- Other eigenvalues of the Hessian can also be computed in a similar way. An interesting extension has been implemented in Noah's[repo](https://github.com/noahgolmant/pytorch-hessian-eigenthings) for computing other eigenvalues of the Hessian spectrum
