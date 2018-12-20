@@ -8,7 +8,7 @@ models.
 ## Example Usage
 After installing pytoch, the following command trains a ResNet on Cifar-10 and prints the dominant Hessian eigenvalue at every epoch:
 
-python train_resnet.pt --name cifar10 --epoch 160 --lr 0.1 --lr-decay 0.2 --lr-decay-epoch 60 90 120 
+python train_resnet.py --name cifar10 --epoch 160 --lr 0.1 --lr-decay 0.2 --lr-decay-epoch 60 90 120 
 
 You can also use the library to compute Hessian spectrum at different snapshots after training is finished. For instance, here we first
 train a simple network:
