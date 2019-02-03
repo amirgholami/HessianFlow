@@ -27,6 +27,26 @@ from torch.autograd import Variable
 from .progressbar import progress_bar
 
 
+def fgsm(model, data, target, eps, cuda = True):
+    """Generate an adversarial pertubation using the fast gradient sign method.
+
+    Args:
+        data: input image to perturb
+    """
+    model.eval()
+    if cuda:
+        data, target = data.cuda(), target.cuda()
+    data.requires_grad = True
+    model.zero_grad()
+    output = model(data)
+    loss = F.cross_entropy(output, target)
+    loss.backward(create_graph = False)
+    pertubation = eps * torch.sign(data.grad.data)
+    x_fgsm = data.data + pertubation
+    X_adv = torch.clamp(x_fgsm, torch.min(data.data), torch.max(data.data))
+
+    return X_adv.cpu()
+
 def exp_lr_scheduler(optimizer, decay_ratio = 0.1):
     """
     Decay learning rate by a factor of lr_decay 

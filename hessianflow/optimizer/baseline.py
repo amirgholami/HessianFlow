@@ -20,7 +20,7 @@ def baseline(model, train_loader, test_loader, criterion, optimizer, epochs, lr_
     
     inner_loop = 0
     num_updates = 0
-    large_ratio = 1
+    large_ratio = max_large_ratio 
     # assert that shuffle is set for train_loader
     # assert and explain large ratio 
     # assert that the train_loader is always set with a small batch size if not print error/warning telling
