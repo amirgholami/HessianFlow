@@ -38,7 +38,7 @@ def get_eigen(model, inputs, targets, criterion, cuda = True, maxIter = 50, tol 
         if eigenvalue == None:
             eigenvalue = eigenvalue_tmp
         else:
-            if abs(eigenvalue-eigenvalue_tmp) < tol:
+            if abs(eigenvalue-eigenvalue_tmp)/abs(eigenvalue) < tol:
                 return eigenvalue_tmp, v
             else:
                 eigenvalue = eigenvalue_tmp
@@ -94,7 +94,7 @@ def get_eigen_full_dataset(model, dataloader, criterion, cuda = True, maxIter = 
         if eigenvalue == None:
             eigenvalue = eigenvalue_tmp
         else:
-            if abs(eigenvalue-eigenvalue_tmp) < tol:
+            if abs(eigenvalue-eigenvalue_tmp)/abs(eigenvalue) < tol:
                 return eigenvalue_tmp, v
             else:
                 eigenvalue = eigenvalue_tmp
