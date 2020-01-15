@@ -1,3 +1,6 @@
+Please see [PyHessian](https://github.com/amirgholami/PyHessian) library for an updated framework supporting different Hessian based methods.
+
+
 ## Hessian Flow: A Library for Hessian Based Algorithms in Machine Learning
 
 HessianFlow is a pytorch library for Hessian based analysis of neural network models that could be used in conjunction with pytorch.
